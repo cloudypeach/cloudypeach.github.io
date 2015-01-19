@@ -1,0 +1,68 @@
+---
+title: Code Samples
+layout: codesamps
+---
+<style>
+.link{
+  font-size:25px;
+  margin-top:30px;
+  display:inline;
+  color:#337ab7;
+  text-decoration:none;
+}
+
+.codepost:hover,
+.codepost:focus {
+  border-bottom-color:#337ab7;
+}
+.date{
+  display:inline;
+  float:right;
+  font-size:25px;
+  color:#337ab7;
+}
+.codepost{
+  cursor:pointer;
+  margin-top:30px;
+  border-bottom:solid;
+  border-bottom-width:2px;
+  border-bottom-color:#85D6FF;
+}
+.excerpt{
+  display:inline;
+  font-size:25px;
+  color:#85D6FF;
+}
+</style>
+{% for post in paginator.posts %}
+  <div class = "codepost" onclick="location.href= '{{ post.url }}';"><div class = "link">{{ post.title }} | </div>
+    <div class="excerpt">{{ post.excerpt }}</div>
+    <div class="date">{{ post.date | date: "%m-%d-%Y" }}</div></div>
+  </div>
+{% endfor %}
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <span>&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>
+    {% elsif page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Menlo WIT</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Menlo Women in Tech Club">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon2.png">
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<link href = "/css/syntax.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<style>
+			body {
+				padding: 30px;
+			}
+			h1 {
+				color:#85D6FF;
+			}
+			.header {
+				font-size: 50px;
+				color:#85D6FF;
+				font-family: "Lato", sans-serif, font-weight: 700; 
+				border-bottom: dashed;
+			}
+			.logo {
+				margin-right:10px;
+				display:inline;
+			}
+			.navbar {
+				display:inline-block;
+			}
+			.link{
+  				font-size:25px;
+  				margin-top:30px;
+				display:inline;
+				color:#337ab7;
+				text-decoration:none;
+			}
+
+			.codepost:hover,
+			.codepost:focus {
+  				border-bottom-color:#337ab7;
+			}
+			.date{
+			  display:inline;
+			  float:right;
+			  font-size:25px;
+			  color:#337ab7;
+			}
+			.codepost{
+			  cursor:pointer;
+			  margin-top:30px;
+			  border-bottom:solid;
+			  border-bottom-width:2px;
+			  border-bottom-color:#85D6FF;
+			}
+			.excerpt{
+			  display:inline;
+			  font-size:25px;
+			  color:#85D6FF;
+			}
+		</style>
+		<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+	<div class = "header">
+	<div class = "logo">
+	<a href = "/index.html" style = "color:inherit; text-decoration: none">women in tech | </a></div>
+	<div class = "navbar">
+	<a href = "/presentations/index.html" style = "color:#A3C2FF">ppts</a>
+	<a href = "/events/index.html" style = "color:#6699FF">events</a>
+	<a href = "/coolsites/index.html" style = "color:#A3C2FF">resources</a>
+	<a href = "/codesamples/index.html" style = "color: #6699FF">code samples</a></div></div>
+	<div>
+
+<style>
+	.codep{
+		margin-top: 30px;
+	}
+</style>
+<div class = "codep">
+<h1 style = "display:inline">Basic HTML and CSS</h1>
+    <p class="muted" style = "display:inline"> 18 January 2014</p>
+<h2>HTML</h2>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span> <span class="c">&lt;!--just says this is an HTML document--&gt;</span>
+
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span> <span class="c">&lt;!--HTML docs are designed like people for some reason...the head is a good place to put a title, link to javascript code and css stylesheets--&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span><span class="c">&lt;!--this imports the jQuery library--&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="c1">//javascript!!</span>
+  <span class="kd">var</span> <span class="nx">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="s2">&quot;and&quot;</span><span class="p">,</span> <span class="s2">&quot;welcome&quot;</span><span class="p">,</span> <span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="s2">&quot;this&quot;</span><span class="p">,</span> <span class="s2">&quot;site&quot;</span><span class="p">];</span>
+  <span class="kd">var</span> <span class="nx">currentWordIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">showWord</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="c1">//goes through the list of words and sets a random color for each one</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">currentWordIndex</span> <span class="o">&lt;</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#words&quot;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">list</span><span class="p">[</span><span class="nx">currentWordIndex</span><span class="p">]);</span>
+      <span class="nx">currentWordIndex</span> <span class="o">++</span><span class="p">;</span>
+
+      <span class="c1">//randomly sets the color of text in the &quot;words&quot; div </span>
+      <span class="kd">var</span> <span class="nx">randomNumberR</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">255</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">randomNumberG</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">255</span><span class="p">);</span>
+      <span class="kd">var</span> <span class="nx">randomNumberB</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">255</span><span class="p">);</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#words&quot;</span><span class="p">).</span><span class="nx">css</span><span class="p">({</span><span class="s2">&quot;color&quot;</span><span class="o">:</span> <span class="s2">&quot;rgb(&quot;</span> <span class="o">+</span> <span class="nx">randomNumberR</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">randomNumberG</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span> <span class="o">+</span> <span class="nx">randomNumberB</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;introToHTML.css&quot;</span> <span class="nt">/&gt;</span> <span class="c">&lt;!--css--&gt;</span>
+
+<span class="nt">&lt;title&gt;</span>HTML Boot Camp<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!--this is what shows up on the wepbage&#39;s top tab--&gt;</span>
+
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span> <span class="c">&lt;!--where the bulk of the doc goes--&gt;</span>
+
+  <span class="c">&lt;!--give your div a name so you can reference it in javascript and css--&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">id =</span><span class="s">&quot;top&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;center&gt;&lt;h1&gt;</span>HTML Boot Camp<span class="nt">&lt;/h1&gt;&lt;/center&gt;</span> <span class="c">&lt;!--this is a header--&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">id =</span><span class="s">&quot;listDisplay&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">onclick =</span><span class="s">&quot;showWord()&quot;</span><span class="nt">&gt;</span>Click me!<span class="nt">&lt;/button&gt;</span> <span class="c">&lt;!--a button that triggers the showWord() function when clicked--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id =</span><span class="s">&quot;words&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+
+<h2>CSS</h2>
+
+<div class="highlight"><pre><code class="language-css" data-lang="css"><span class="k">@import</span> <span class="nt">url</span><span class="o">(</span><span class="nt">http</span><span class="o">://</span><span class="nt">fonts</span><span class="nc">.googleapis.com</span><span class="o">/</span><span class="nt">css</span><span class="o">?</span><span class="nt">family</span><span class="o">=</span><span class="nt">Londrina</span><span class="o">+</span><span class="nt">Outline</span><span class="o">)</span><span class="p">;</span>
+<span class="c">/**How to customize a div:**/</span>
+<span class="nf">#top</span><span class="p">{</span>
+
+  <span class="c">/**set a cool font for this div**/</span>
+  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;Londrina Outline&#39;</span><span class="o">,</span> <span class="k">cursive</span><span class="p">;</span> 
+    <span class="c">/**I imported a font from google fonts up above and now am styling a div with it**/</span>
+  
+  <span class="c">/**now set a nice color for it**/</span>
+  <span class="k">color</span><span class="o">:</span> <span class="nb">purple</span><span class="p">;</span> 
+    <span class="c">/**A simple way to set font color: type the name of the color**/</span>
+
+  <span class="c">/**now a color for the background**/</span>
+  <span class="k">background-color</span><span class="o">:</span> <span class="m">#CCFFCC</span><span class="p">;</span>
+    <span class="c">/**you can also set colors using the hex system (search online for more info)</span>
+<span class="c">    btw, no need to memorize hex colors. just look up which hex makes which color</span>
+<span class="c">    and copy paste.**/</span>
+<span class="p">}</span>
+
+<span class="nf">#listDisplay</span><span class="p">{</span>
+
+  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;Londrina Outline&#39;</span><span class="o">,</span> <span class="k">cursive</span><span class="p">;</span> 
+
+  <span class="c">/**set a font size for the text**/</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+
+  <span class="c">/**this means the text will be positioned relative to the other elements on the page**/</span>
+  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+    <span class="c">/**look up the different ways of positioning things if you are interested**/</span>
+
+  <span class="c">/**position the text 45% from the left side of the page</span>
+<span class="c">   (you can also do this with pixels)**/</span>
+  <span class="k">left</span><span class="o">:</span><span class="m">45%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="nd">:hover</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="nd">:visited</span>
+<span class="p">{</span>
+  
+<span class="p">}</span></code></pre></div>
+
+
+
+
+</div>
+    </div>
+
+  </body>
+  </center>
+</html>

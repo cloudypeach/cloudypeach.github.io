@@ -1,0 +1,17 @@
+name: "Menlo WIT"
+
+description: "Menlo Women in Tech Club"
+
+url: "http://localhost:400"
+
+paginate: 10
+
+paginate_path: "codesamples/page:num"
+
+markdown: rdiscount
+
+permalink: pretty
+
+highlighter: pygments
+
+excerpt_separator: ""

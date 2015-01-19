@@ -1,1 +1,0 @@
-<a href="https://github.com/">Github</a> is a widely-used website and application that allows mutliple people to collaborate on one collection (or repository) of code.  It also hosts websites for free.

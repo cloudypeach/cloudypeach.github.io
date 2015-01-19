@@ -1,0 +1,18 @@
+{% include header.html %}
+<style>
+	.about{
+		float:left;
+		width:60%;
+		margin-right:30px;
+	}
+	#calendar{
+		margin-top:30px;
+		float:left;
+	}
+</style>
+<div class = "about">
+	{{ content }}
+</div>
+<div id = "calendar">
+<iframe src="https://www.google.com/calendar/embed?src=menloschool.org_jq8mk7ru9m8rptlg5jmdtg7804%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="430" height="300" frameborder="0" scrolling="no"></iframe></div>
+{% include footer.html %}

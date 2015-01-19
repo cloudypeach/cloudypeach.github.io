@@ -1,0 +1,21 @@
+{% include header.html %}
+<style>
+	#link-container
+	{
+		font-size:25px;
+		margin-top:30px;
+	}
+</style>
+<div id = "link-container">
+	
+</div>
+<script>
+	titles = ["Intro to Web Dev", "Github, Git, and the Command Line Interface", "First Meeting"]
+	urls = ["https://docs.google.com/a/menloschool.org/presentation/d/1YPOkqElKZIXVczvXcyFMMPyfrCK5GUBP2wPKSKbUazE/edit?usp=sharing","https://docs.google.com/a/menloschool.org/presentation/d/1x2QtYykiaOZ4B9qHHVQimMO7V8iwvPjQcTwf5lP0yN0/edit?usp=sharing", "https://docs.google.com/presentation/d/10ammhKVEwb1JQp2jyrJ1MapjIW0zQ7qrEshFr5GRNBU/edit?usp=sharing"]
+	for (i = 0; i < titles.length;i ++){
+		link = urls[i];
+		result = '<div class = "codepost" onclick="location.href= \'' + link + '\';"><div class = "link">' + titles[i] + '</div></div>'
+		$("#link-container").append(result);
+	}
+</script>
+{% include footer.html %}

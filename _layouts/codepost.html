@@ -1,0 +1,12 @@
+{% include header.html %}
+<style>
+	.codep{
+		margin-top: 30px;
+	}
+</style>
+<div class = "codep">
+<h1 style = "display:inline">{{ page.title }}</h1>
+    <p class="muted" style = "display:inline"> {{ page.date | date_to_long_string }}</p>
+{{ content }}
+</div>
+{% include footer.html %}

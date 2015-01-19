@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Menlo WIT</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Menlo Women in Tech Club">
+		<link rel="shortcut icon" type="image/x-icon" href="img/favicon2.png">
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<link href = "/css/syntax.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<style>
+			body {
+				padding: 30px;
+			}
+			h1 {
+				color:#85D6FF;
+			}
+			.header {
+				font-size: 50px;
+				color:#85D6FF;
+				font-family: "Lato", sans-serif, font-weight: 700; 
+				border-bottom: dashed;
+			}
+			.logo {
+				margin-right:10px;
+				display:inline;
+			}
+			.navbar {
+				display:inline-block;
+			}
+			.link{
+  				font-size:25px;
+  				margin-top:30px;
+				display:inline;
+				color:#337ab7;
+				text-decoration:none;
+			}
+
+			.codepost:hover,
+			.codepost:focus {
+  				border-bottom-color:#337ab7;
+			}
+			.date{
+			  display:inline;
+			  float:right;
+			  font-size:25px;
+			  color:#337ab7;
+			}
+			.codepost{
+			  cursor:pointer;
+			  margin-top:30px;
+			  border-bottom:solid;
+			  border-bottom-width:2px;
+			  border-bottom-color:#85D6FF;
+			}
+			.excerpt{
+			  display:inline;
+			  font-size:25px;
+			  color:#85D6FF;
+			}
+		</style>
+		<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+	<div class = "header">
+	<div class = "logo">
+	<a href = "/index.html" style = "color:inherit; text-decoration: none">women in tech | </a></div>
+	<div class = "navbar">
+	<a href = "/presentations/index.html" style = "color:#A3C2FF">ppts</a>
+	<a href = "/events/index.html" style = "color:#6699FF">events</a>
+	<a href = "/coolsites/index.html" style = "color:#A3C2FF">resources</a>
+	<a href = "/codesamples/index.html" style = "color: #6699FF">code samples</a></div></div>
+	<div>
+
+<style>
+	.codep{
+		margin-top: 30px;
+	}
+</style>
+<div class = "codep">
+<h1 style = "display:inline">Rhymes.js</h1>
+    <p class="muted" style = "display:inline"> 19 January 2014</p>
+<h2>HTML</h2>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span><span class="c">&lt;!--this imports the jQuery library--&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;rhymes.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;form&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="err"> </span><span class="s">=</span> <span class="err">&quot;</span><span class="na">text</span><span class="err">&quot;</span> <span class="na">id =</span><span class="err"> </span><span class="s">&quot;enteredWord&quot;</span> <span class="na">name =</span><span class="err"> </span><span class="s">&quot;word&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type =</span><span class="err"> </span><span class="s">&quot;button&quot;</span> <span class="na">id =</span><span class="err"> </span><span class="s">&quot;submitButton&quot;</span> <span class="na">value =</span><span class="err"> </span><span class="s">&quot;Submit&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id =</span><span class="err"> </span><span class="s">&quot;results&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id =</span><span class="err"> </span><span class="s">&quot;sentences&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+
+<h2>Javascript</h2>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="kd">var</span> <span class="nx">word</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">lengthOfWord</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;yoyo&quot;</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">render</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">data</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">++</span><span class="p">){</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#results&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">][</span><span class="s1">&#39;word&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">var</span> <span class="nx">showSentences</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+
+        <span class="kd">var</span> <span class="nx">randomIndex</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="nx">data</span><span class="p">[</span><span class="s1">&#39;examples&#39;</span><span class="p">].</span><span class="nx">length</span><span class="p">);</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#sentences&quot;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="s1">&#39;examples&#39;</span><span class="p">][</span><span class="nx">randomIndex</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#submitButton&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+        <span class="nx">word</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#enteredWord&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+        <span class="nx">lengthOfWord</span> <span class="o">=</span> <span class="nx">word</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+        <span class="kd">var</span> <span class="nx">numOfResults</span> <span class="o">=</span> <span class="mi">15</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">word</span><span class="p">);</span>
+        <span class="kd">var</span> <span class="nx">rhymes</span> <span class="o">=</span> <span class="s2">&quot;http://rhymebrain.com/talk?function=getRhymes&amp;word=&quot;</span> <span class="o">+</span> <span class="nx">word</span> <span class="o">+</span> <span class="s2">&quot;&amp;maxResults=&quot;</span> <span class="o">+</span> <span class="nx">numOfResults</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="nx">rhymes</span><span class="p">,</span>
+            <span class="nx">success</span><span class="o">:</span> <span class="nx">render</span><span class="p">,</span>
+            <span class="nx">dataType</span><span class="o">:</span><span class="s2">&quot;json&quot;</span>
+        <span class="p">});</span>
+        
+    <span class="p">})</span>
+<span class="p">});</span></code></pre></div>
+
+
+</div>
+    </div>
+
+  </body>
+  </center>
+</html>
