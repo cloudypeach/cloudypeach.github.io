@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Menlo WIT</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Menlo Women in Tech Club">
+		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon2.png">
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<link href = "/css/syntax.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<style>
+			body {
+				padding: 30px;
+			}
+			h1 {
+				color:#85D6FF;
+			}
+			.header {
+				font-size: 50px;
+				color:#85D6FF;
+				font-family: "Lato", sans-serif, font-weight: 700; 
+				border-bottom: dashed;
+			}
+			.logo {
+				margin-right:10px;
+				display:inline;
+			}
+			.navbar {
+				display:inline-block;
+			}
+			.link{
+  				font-size:25px;
+  				margin-top:30px;
+				display:inline;
+				color:#337ab7;
+				text-decoration:none;
+			}
+
+			.codepost:hover,
+			.codepost:focus {
+  				border-bottom-color:#337ab7;
+			}
+			.date{
+			  display:inline;
+			  float:right;
+			  font-size:25px;
+			  color:#337ab7;
+			}
+			.codepost{
+			  cursor:pointer;
+			  margin-top:30px;
+			  border-bottom:solid;
+			  border-bottom-width:2px;
+			  border-bottom-color:#85D6FF;
+			}
+			.excerpt{
+			  display:inline;
+			  font-size:25px;
+			  color:#85D6FF;
+			}
+		</style>
+		<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+	<div class = "header">
+	<div class = "logo">
+	<a href = "/" style = "color:inherit; text-decoration: none">women in tech | </a></div>
+	<div class = "navbar">
+	<a href = "/presentations/" style = "color:#A3C2FF">ppts</a>
+	<a href = "/events/" style = "color:#6699FF">events</a>
+	<a href = "/coolsites/" style = "color:#A3C2FF">resources</a>
+	<a href = "/codesamples/" style = "color: #6699FF">code samples</a></div></div>
+	<div>
+
+<style>
+	.codep{
+		margin-top: 30px;
+	}
+</style>
+<div class = "codep">
+<h1 style = "display:inline">Tap Me</h1>
+    <p class="muted" style = "display:inline"> 20 January 2014</p>
+<p><br>
+Creds to <a href = "http://www.raywenderlich.com/25561/learn-to-code-ios-apps-3-your-first-app">this guy</a></p>
+
+<h2>AppDelegate.h</h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//</span>
+<span class="c1">//  AppDelegate.h</span>
+<span class="c1">//  Tap Me</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Elana Shen on 6/19/14.</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &lt;UIKit/UIKit.h&gt;</span>
+
+<span class="k">@interface</span> <span class="nc">AppDelegate</span> : <span class="bp">UIResponder</span> <span class="o">&lt;</span><span class="bp">UIApplicationDelegate</span><span class="o">&gt;</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="k">strong</span><span class="p">,</span> <span class="k">nonatomic</span><span class="p">)</span> <span class="bp">UIWindow</span> <span class="o">*</span><span class="n">window</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre></div>
+
+
+<h2>AppDelegate.m</h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//</span>
+<span class="c1">//  AppDelegate.m</span>
+<span class="c1">//  Tap Me</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Elana Shen on 6/19/14.</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &quot;AppDelegate.h&quot;</span>
+
+<span class="k">@implementation</span> <span class="nc">AppDelegate</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="bp">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
+<span class="p">{</span>
+    <span class="c1">// Override point for customization after application launch.</span>
+    <span class="k">return</span> <span class="nb">YES</span><span class="p">;</span>
+<span class="p">}</span>
+                            
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationWillResignActive:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span>
+<span class="p">{</span>
+    <span class="c1">// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.</span>
+    <span class="c1">// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidEnterBackground:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span>
+<span class="p">{</span>
+    <span class="c1">// Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. </span>
+    <span class="c1">// If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationWillEnterForeground:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span>
+<span class="p">{</span>
+    <span class="c1">// Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationDidBecomeActive:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span>
+<span class="p">{</span>
+    <span class="c1">// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">applicationWillTerminate:</span><span class="p">(</span><span class="bp">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span>
+<span class="p">{</span>
+    <span class="c1">// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.</span>
+<span class="p">}</span>
+
+<span class="k">@end</span></code></pre></div>
+
+
+<h2>ViewController.h</h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//</span>
+<span class="c1">//  ViewController.h</span>
+<span class="c1">//  Tap Me</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Elana Shen on 6/19/14.</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &lt;UIKit/UIKit.h&gt;</span>
+<span class="cp">#import &lt;AVFoundation/AVFoundation.h&gt;</span>
+
+<span class="k">@interface</span> <span class="nc">ViewController</span> : <span class="bp">UIViewController</span><span class="o">&lt;</span><span class="bp">UIAlertViewDelegate</span><span class="o">&gt;</span><span class="p">{</span>
+    <span class="c1">//controls labels and button</span>
+    <span class="kt">IBOutlet</span> <span class="bp">UILabel</span> <span class="o">*</span><span class="n">scoreLabel</span><span class="p">;</span>
+    <span class="kt">IBOutlet</span> <span class="bp">UILabel</span> <span class="o">*</span><span class="n">timerLabel</span><span class="p">;</span>
+    <span class="bp">AVAudioPlayer</span> <span class="o">*</span><span class="n">buttonBeep</span><span class="p">;</span>
+    <span class="bp">AVAudioPlayer</span> <span class="o">*</span><span class="n">secondBeep</span><span class="p">;</span>
+    <span class="bp">AVAudioPlayer</span> <span class="o">*</span><span class="n">backgroundMusic</span><span class="p">;</span>
+    <span class="bp">NSInteger</span> <span class="n">count</span><span class="p">;</span>
+    <span class="bp">NSInteger</span> <span class="n">seconds</span><span class="p">;</span>
+    <span class="bp">NSTimer</span> <span class="o">*</span><span class="n">timer</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="n">buttonPressed</span><span class="p">;</span>
+<span class="k">@end</span></code></pre></div>
+
+
+<h2>ViewController.m</h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//</span>
+<span class="c1">//  ViewController.m</span>
+<span class="c1">//  Tap Me</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Elana Shen on 6/19/14.</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &quot;ViewController.h&quot;</span>
+
+<span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
+
+<span class="k">@end</span>
+
+<span class="k">@implementation</span> <span class="nc">ViewController</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">setupGame</span> <span class="p">{</span>
+    <span class="c1">// 1</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="c1">// 2</span>
+    <span class="n">timerLabel</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;Time: %i&quot;</span><span class="p">,</span> <span class="n">seconds</span><span class="p">];</span>
+    <span class="n">scoreLabel</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;Score</span><span class="se">\n</span><span class="s">%i&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">];</span>
+    
+    <span class="c1">// 3</span>
+    <span class="n">timer</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSTimer</span> <span class="nl">scheduledTimerWithTimeInterval</span><span class="p">:</span><span class="mf">1.0f</span>
+                                             <span class="nl">target</span><span class="p">:</span><span class="nb">self</span>
+                                           <span class="nl">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="n">subtractTime</span><span class="p">)</span>
+                                           <span class="nl">userInfo</span><span class="p">:</span><span class="nb">nil</span>
+                                            <span class="nl">repeats</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">backgroundMusic</span> <span class="nl">setVolume</span><span class="p">:</span><span class="mf">0.3</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">backgroundMusic</span> <span class="n">play</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">alertView:</span><span class="p">(</span><span class="bp">UIAlertView</span> <span class="o">*</span><span class="p">)</span><span class="nv">alertView</span> <span class="nf">clickedButtonAtIndex:</span><span class="p">(</span><span class="bp">NSInteger</span><span class="p">)</span><span class="nv">buttonIndex</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nb">self</span> <span class="n">setupGame</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">subtractTime</span> <span class="p">{</span>
+    <span class="c1">// 1</span>
+    <span class="n">seconds</span><span class="o">--</span><span class="p">;</span>
+    <span class="n">timerLabel</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;Time: %i&quot;</span><span class="p">,</span><span class="n">seconds</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">secondBeep</span> <span class="n">play</span><span class="p">];</span>
+    
+    <span class="c1">// 2</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">seconds</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="n">timer</span> <span class="n">invalidate</span><span class="p">];</span>
+        <span class="bp">UIAlertView</span> <span class="o">*</span><span class="n">alert</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">UIAlertView</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithTitle</span><span class="p">:</span><span class="s">@&quot;Time is up!&quot;</span>
+                                                        <span class="nl">message</span><span class="p">:[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;You scored %i points&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">]</span>
+                                                       <span class="nl">delegate</span><span class="p">:</span><span class="nb">self</span>
+                                              <span class="nl">cancelButtonTitle</span><span class="p">:</span><span class="s">@&quot;Play Again&quot;</span>
+                                              <span class="nl">otherButtonTitles</span><span class="p">:</span><span class="nb">nil</span><span class="p">];</span>
+        
+        <span class="p">[</span><span class="n">alert</span> <span class="n">show</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">-</span> <span class="p">(</span><span class="bp">AVAudioPlayer</span> <span class="o">*</span><span class="p">)</span><span class="nf">setupAudioPlayerWithFile:</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">file</span> <span class="nf">type:</span><span class="p">(</span><span class="bp">NSString</span> <span class="o">*</span><span class="p">)</span><span class="nv">type</span>
+<span class="p">{</span>
+    <span class="c1">// 1</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">path</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSBundle</span> <span class="n">mainBundle</span><span class="p">]</span> <span class="nl">pathForResource</span><span class="p">:</span><span class="n">file</span> <span class="nl">ofType</span><span class="p">:</span><span class="n">type</span><span class="p">];</span>
+    <span class="bp">NSURL</span> <span class="o">*</span><span class="n">url</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSURL</span> <span class="nl">fileURLWithPath</span><span class="p">:</span><span class="n">path</span><span class="p">];</span>
+    
+    <span class="c1">// 2</span>
+    <span class="bp">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">;</span>
+    
+    <span class="c1">// 3</span>
+    <span class="bp">AVAudioPlayer</span> <span class="o">*</span><span class="n">audioPlayer</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">AVAudioPlayer</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithContentsOfURL</span><span class="p">:</span><span class="n">url</span> <span class="nl">error</span><span class="p">:</span><span class="o">&amp;</span><span class="n">error</span><span class="p">];</span>
+    
+    <span class="c1">// 4</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">audioPlayer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@&quot;</span><span class="p">,[</span><span class="n">error</span> <span class="n">description</span><span class="p">]);</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// 5</span>
+    <span class="k">return</span> <span class="n">audioPlayer</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">viewDidLoad</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="nb">super</span> <span class="n">viewDidLoad</span><span class="p">];</span>
+    <span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
+     <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIColor</span> <span class="nl">colorWithPatternImage</span><span class="p">:[</span><span class="bp">UIImage</span> <span class="nl">imageNamed</span><span class="p">:</span><span class="s">@&quot;bg_tile.png&quot;</span><span class="p">]];</span>
+    <span class="n">scoreLabel</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIColor</span> <span class="nl">colorWithPatternImage</span><span class="p">:[</span><span class="bp">UIImage</span> <span class="nl">imageNamed</span><span class="p">:</span><span class="s">@&quot;field_score.png&quot;</span><span class="p">]];</span>
+    <span class="n">timerLabel</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="p">[</span><span class="bp">UIColor</span> <span class="nl">colorWithPatternImage</span><span class="p">:[</span><span class="bp">UIImage</span> <span class="nl">imageNamed</span><span class="p">:</span><span class="s">@&quot;field_time.png&quot;</span><span class="p">]];</span>
+    <span class="n">buttonBeep</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="nl">setupAudioPlayerWithFile</span><span class="p">:</span><span class="s">@&quot;ButtonTap&quot;</span> <span class="nl">type</span><span class="p">:</span><span class="s">@&quot;wav&quot;</span><span class="p">];</span>
+    <span class="n">secondBeep</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="nl">setupAudioPlayerWithFile</span><span class="p">:</span><span class="s">@&quot;SecondBeep&quot;</span> <span class="nl">type</span><span class="p">:</span><span class="s">@&quot;wav&quot;</span><span class="p">];</span>
+    <span class="n">backgroundMusic</span> <span class="o">=</span> <span class="p">[</span><span class="nb">self</span> <span class="nl">setupAudioPlayerWithFile</span><span class="p">:</span><span class="s">@&quot;HallOfTheMountainKing&quot;</span> <span class="nl">type</span><span class="p">:</span><span class="s">@&quot;mp3&quot;</span><span class="p">];</span>
+    <span class="p">[</span><span class="nb">self</span> <span class="n">setupGame</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">didReceiveMemoryWarning</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="nb">super</span> <span class="n">didReceiveMemoryWarning</span><span class="p">];</span>
+    <span class="c1">// Dispose of any resources that can be recreated.</span>
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">IBAction</span><span class="p">)</span><span class="nf">buttonPressed</span> <span class="p">{</span>
+    <span class="n">count</span> <span class="o">++</span><span class="p">;</span>
+    <span class="n">scoreLabel</span><span class="p">.</span><span class="n">text</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;Score</span><span class="se">\n</span><span class="s">%i&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">buttonBeep</span> <span class="n">play</span><span class="p">];</span>
+<span class="p">}</span>
+<span class="k">@end</span></code></pre></div>
+
+
+</div>
+    </div>
+
+  </body>
+  </center>
+</html>
