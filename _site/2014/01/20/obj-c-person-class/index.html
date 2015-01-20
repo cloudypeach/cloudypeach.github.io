@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Menlo WIT</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Menlo Women in Tech Club">
+		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon2.png">
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<link href = "/css/syntax.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<style>
+			body {
+				padding: 30px;
+			}
+			h1 {
+				color:#85D6FF;
+			}
+			.header {
+				font-size: 50px;
+				color:#85D6FF;
+				font-family: "Lato", sans-serif, font-weight: 700; 
+				border-bottom: dashed;
+			}
+			.logo {
+				margin-right:10px;
+				display:inline;
+			}
+			.navbar {
+				display:inline-block;
+			}
+			.link{
+  				font-size:25px;
+  				margin-top:30px;
+				display:inline;
+				color:#337ab7;
+				text-decoration:none;
+			}
+
+			.codepost:hover,
+			.codepost:focus {
+  				border-bottom-color:#337ab7;
+			}
+			.date{
+			  display:inline;
+			  float:right;
+			  font-size:25px;
+			  color:#337ab7;
+			}
+			.codepost{
+			  cursor:pointer;
+			  margin-top:30px;
+			  border-bottom:solid;
+			  border-bottom-width:2px;
+			  border-bottom-color:#85D6FF;
+			}
+			.excerpt{
+			  display:inline;
+			  font-size:25px;
+			  color:#85D6FF;
+			}
+		</style>
+		<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+	<div class = "header">
+	<div class = "logo">
+	<a href = "/" style = "color:inherit; text-decoration: none">women in tech | </a></div>
+	<div class = "navbar">
+	<a href = "/presentations/" style = "color:#A3C2FF">ppts</a>
+	<a href = "/events/" style = "color:#6699FF">events</a>
+	<a href = "/coolsites/" style = "color:#A3C2FF">resources</a>
+	<a href = "/codesamples/" style = "color: #6699FF">code samples</a></div></div>
+	<div>
+
+<style>
+	.codep{
+		margin-top: 30px;
+	}
+</style>
+<div class = "codep">
+<h1 style = "display:inline">Objective C Person Class</h1>
+    <p class="muted" style = "display:inline"> 20 January 2014</p>
+<h2>Main.m</h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//</span>
+<span class="c1">//  main.m</span>
+<span class="c1">//  PeopleDatabase</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Fahim Farook on 15/7/13.</span>
+<span class="c1">//  Copyright (c) 2013 Fahim Farook. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &lt;Foundation/Foundation.h&gt;</span>
+<span class="cp">#import &quot;Person.h&quot;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+
+    <span class="k">@autoreleasepool</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">response</span><span class="p">;</span>
+        <span class="bp">NSMutableArray</span> <span class="o">*</span><span class="n">people</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">NSMutableArray</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+        
+        <span class="k">do</span> <span class="p">{</span>
+            <span class="n">Person</span> <span class="o">*</span><span class="n">newPerson</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Person</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+            <span class="p">[</span><span class="n">newPerson</span> <span class="n">enterInfo</span><span class="p">];</span>
+            <span class="p">[</span><span class="n">newPerson</span> <span class="n">printInfo</span><span class="p">];</span>
+            <span class="p">[</span><span class="n">people</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">newPerson</span><span class="p">];</span>
+            
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Do you want to enter another name? (y/n)&quot;</span><span class="p">);</span>
+            <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">%c&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">response</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="n">response</span> <span class="o">==</span> <span class="sc">&#39;y&#39;</span><span class="p">);</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Number of people in the database: %li&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">people</span> <span class="n">count</span><span class="p">]);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Person</span> <span class="o">*</span><span class="n">onePerson</span> <span class="k">in</span> <span class="n">people</span><span class="p">)</span> <span class="p">{</span>
+            <span class="p">[</span><span class="n">onePerson</span> <span class="n">printInfo</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></div>
+
+
+<h2>Person.h</h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//  Person.h</span>
+<span class="c1">//  PeopleDatabase</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Fahim Farook on 15/7/13.</span>
+<span class="c1">//  Copyright (c) 2013 Fahim Farook. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &lt;Foundation/Foundation.h&gt;</span>
+<span class="c1">//interface: defines methods and attributes</span>
+<span class="k">@interface</span> <span class="nc">Person</span> : <span class="bp">NSObject</span> <span class="p">{</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">firstName</span><span class="p">;</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">lastName</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">age</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">//method signatures</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">enterInfo</span><span class="p">;</span>
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">printInfo</span><span class="p">;</span>
+
+<span class="k">@end</span></code></pre></div>
+
+
+<h2>Person.m</h2>
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//</span>
+<span class="c1">//  Person.m</span>
+<span class="c1">//  PeopleDatabase</span>
+<span class="c1">//</span>
+<span class="c1">//  Created by Fahim Farook on 15/7/13.</span>
+<span class="c1">//  Copyright (c) 2013 Fahim Farook. All rights reserved.</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &quot;Person.h&quot;</span>
+
+<span class="k">@implementation</span> <span class="nc">Person</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">enterInfo</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;What is the first name?&quot;</span><span class="p">);</span>
+    <span class="kt">char</span> <span class="n">cstring</span><span class="p">[</span><span class="mi">40</span><span class="p">];</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">cstring</span><span class="p">);</span>
+    
+    <span class="n">firstName</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithCString</span><span class="p">:</span><span class="n">cstring</span> <span class="nl">encoding</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+    
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;What is %@&#39;s last name?&quot;</span><span class="p">,</span><span class="n">firstName</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="n">cstring</span><span class="p">);</span>
+    <span class="n">lastName</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithCString</span><span class="p">:</span><span class="n">cstring</span> <span class="nl">encoding</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+    
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;How old is %@ %@?&quot;</span><span class="p">,</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%i&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">age</span><span class="p">);</span>
+    
+<span class="p">}</span>
+
+<span class="p">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">printInfo</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%@ %@ is %i years old&quot;</span><span class="p">,</span> <span class="n">firstName</span><span class="p">,</span> <span class="n">lastName</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">@end</span></code></pre></div>
+
+
+</div>
+    </div>
+
+  </body>
+  </center>
+</html>
