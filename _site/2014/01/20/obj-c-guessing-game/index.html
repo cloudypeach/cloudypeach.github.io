@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Menlo WIT</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Menlo Women in Tech Club">
+		<link rel="shortcut icon" type="image/x-icon" href="/img/favicon2.png">
+		<link href="/css/bootstrap.css" rel="stylesheet">
+		<link href = "/css/syntax.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<style>
+			body {
+				padding: 30px;
+			}
+			h1 {
+				color:#85D6FF;
+			}
+			.header {
+				font-size: 50px;
+				color:#85D6FF;
+				font-family: "Lato", sans-serif, font-weight: 700; 
+				border-bottom: dashed;
+			}
+			.logo {
+				margin-right:10px;
+				display:inline;
+			}
+			.navbar {
+				display:inline-block;
+			}
+			.link{
+  				font-size:25px;
+  				margin-top:30px;
+				display:inline;
+				color:#337ab7;
+				text-decoration:none;
+			}
+
+			.codepost:hover,
+			.codepost:focus {
+  				border-bottom-color:#337ab7;
+			}
+			.date{
+			  display:inline;
+			  float:right;
+			  font-size:25px;
+			  color:#337ab7;
+			}
+			.codepost{
+			  cursor:pointer;
+			  margin-top:30px;
+			  border-bottom:solid;
+			  border-bottom-width:2px;
+			  border-bottom-color:#85D6FF;
+			}
+			.excerpt{
+			  display:inline;
+			  font-size:25px;
+			  color:#85D6FF;
+			}
+		</style>
+		<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+	</head>
+	<body>
+	<div class = "header">
+	<div class = "logo">
+	<a href = "/" style = "color:inherit; text-decoration: none">women in tech | </a></div>
+	<div class = "navbar">
+	<a href = "/presentations/" style = "color:#A3C2FF">ppts</a>
+	<a href = "/events/" style = "color:#6699FF">events</a>
+	<a href = "/coolsites/" style = "color:#A3C2FF">resources</a>
+	<a href = "/codesamples/" style = "color: #6699FF">code samples</a></div></div>
+	<div>
+
+<style>
+	.codep{
+		margin-top: 30px;
+	}
+</style>
+<div class = "codep">
+<h1 style = "display:inline">Objective-C Guessing Game</h1>
+    <p class="muted" style = "display:inline"> 20 January 2014</p>
+
+
+<div class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">//</span>
+<span class="c1">//  main.m</span>
+<span class="c1">//  My First Project</span>
+<span class="c1">//</span>
+<span class="c1">//  creds to http://www.raywenderlich.com/38557/learn-to-code-ios-apps-1-welcome-to-programming</span>
+<span class="c1">//</span>
+
+<span class="cp">#import &lt;Foundation/Foundation.h&gt; </span><span class="c1">//minimum foundational framework for any app</span>
+
+<span class="c1">//main method, like in Java</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">@autoreleasepool</span> <span class="p">{</span>
+        <span class="c1">//autoreleasepool is used to manage memory</span>
+        
+        <span class="c1">//random examples</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span>
+        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">+</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;num equals %i&quot;</span><span class="p">,</span> <span class="n">num</span><span class="p">);</span> <span class="c1">//NSLog is the equivalent of console.log() in Javascript, logs text in console</span>
+        <span class="bp">NSString</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="s">@&quot;Elana&quot;</span><span class="p">;</span> <span class="c1">//* and @ are weird syntax features denoting the type of object that will follow them</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;%A&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span> <span class="c1">//%A stands in for String variable</span>
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="bp">NSString</span> <span class="o">*</span><span class="n">myString</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;The variable x stores the number %i&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">];</span>
+        
+        <span class="c1">//guessing game</span>
+        <span class="kt">int</span> <span class="n">guess</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">turn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">arc4random</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>  <span class="c1">//arc4random() = random number generator</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">guess</span> <span class="o">!=</span> <span class="n">answer</span><span class="p">)</span> <span class="p">{</span>
+            
+            <span class="n">turn</span><span class="o">++</span><span class="p">;</span>
+            
+            <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Guess #%i: Enter a number between 1 and 100&quot;</span><span class="p">,</span> <span class="n">turn</span><span class="p">);</span>
+            <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%i&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">guess</span><span class="p">);</span>
+            
+            <span class="k">if</span> <span class="p">(</span><span class="n">guess</span> <span class="o">&gt;</span> <span class="n">answer</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Lower!&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">guess</span> <span class="o">&lt;</span> <span class="n">answer</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Higher!&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Correct! The answer was %i&quot;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;It took you %i tries&quot;</span><span class="p">,</span> <span class="n">turn</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//terminates</span>
+<span class="p">}</span></code></pre></div>
+
+
+
+
+</div>
+    </div>
+
+  </body>
+  </center>
+</html>
